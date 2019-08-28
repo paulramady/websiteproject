@@ -3,173 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href= "main.css">
-    <title>Document</title>
+    <title>index</title>
 </head>
-<body>
-
-<div>
-<z-index:1></z-index:1>
-<br></br>
-<br></br>
-<br></br>
-
-</div>
- <h1> WHO AM I? </h1> </p> 
- <br></br>
-<p> Welcome to the Matrix, I am Paul "the Architect"! In the real world, I am a Chemistry graduate who has worked in a range of positions  such as: a Laboratory Manager, Technical Manager, Recruitment Consultant (IT and Scientific) and Company Director! I have an extensive range of skills from Project Management (£1m+ budgets), Staff management, technical troubleshooting and problem solving, QA / QC, Database creation and management right through to Business Development and Sales! 
-</P>
-
-<br>
-The reason I came to Code Nation was to learn a new skill set in coding. Having recruited for developers in SQL, C#, MS Dynamics etc, I thought it about time I developed my understanding further, and as I have thorouhly enjoyed my experience I hope one day to become a technical consulant, implementation consultant, developer or project manager! </br> 
-
-</p>
-<p>
-<br>
-
-Please check out my <a href= "https://www.linkedin.com/in/paulramady/" >Linked In</a> profile for more information
-</br>
-<br></br>
-</p>
-<h3> Please use thse links to navigate around the matrix</h3>
-<ul> 
-        <br></br>
-    <li> <a href= problems1.html >Problems Archive 1</a> </li>
-    <li> <a href= problems2.html >Problems Archive 2</a></li>
-    <Li> <a href= "https://www.wearecodenation.com" >Code Nation</a></Li>
-    <li> <a href= contactus.html >Contact Me</a></li> 
-
-</ul>
-</z-index:1>
-</div>
-<div>
-        <style>
-            /*basic reset */
-            *{
-                margin: 0;
-                padding: 0;
-            }
-            
-            /* Page settings */
-            html {
-                width: 100%;
-                height: 100%;
-                background: radial-gradient(circle, #fff 0%, #aaa 100%) no-repeat;
-                overflow-x: hidden;
-                overflow-y: hidden;
-            }
-            body {
-                text-align: center;
-                display: table;
-                background: black;
-                width: 100%;
-                height: 100%;
-                overflow-x: hidden;
-                overflow-y: hidden;
-            }
-
-            canvas {display:block;}
-            
-            #author {
-                position: absolute;
-                bottom: 750px;
-                left: 450px;
-                color : #0F0;
-                z-index : 1;
-                box-sizing: border-box;
-                vertical-align: middle;
-            }
+<body class="unicorn"> 
+        <head>
+                
+                <style>
+                    /*basic reset */
+                    *{
+                        margin: 0;
+                        padding: 0;
+                    }
+                    
+                    /* Page settings */
+                    html {
+                        width: 100%;
+                        height: 100%;
+                        background: radial-gradient(circle, #fff 0%, #aaa 100%) no-repeat;
+                        overflow-x: hidden;
+                        overflow-y: hidden;
+                    }
+                    body {
+                        text-align: center;
+                        display: table;
+                        background: black;
+                        width: 100%;
+                        height: 100%;
+                        overflow-x: hidden;
+                        overflow-y: hidden;
+                    }
         
-            span {
-                font-family: monospace;
-                font-size: 1.5em;
-            }
-            span:after {
-                content:"_The Matrix has you";
-                opacity: 0;
-                animation: cursor 1s infinite;
-            }
-            @keyframes cursor {
-                0% {
-                    opacity: 0;
-                }
-                40% {
-                    opacity: 0;
-                }
-                50% {
-                    opacity: 1;
-                }
-                90% {
-                    opacity: 1;
-                }
-                100% {
-                    opacity: 0;
-                }
-            }
+                    canvas {display:block;}
+                    
+                    #author {
+                        position: absolute;
+                        bottom: 450px;
+                        left: 500px;
+                        color : #0F0;
+                        z-index : 1;
+                        box-sizing: border-box;
+                        vertical-align: middle;
+                    }
+                
+                    span {
+                        font-family: monospace;
+                        font-size: 1.5em;
+                    }
+                    span:after {
+                        content:"_The Unicorn Matrix has you";
+                        opacity: 0;
+                        animation: cursor 1s infinite;
+                    }
+                    @keyframes cursor {
+                        0% {
+                            opacity: 0;
+                        }
+                        40% {
+                            opacity: 0;
+                        }
+                        50% {
+                            opacity: 1;
+                        }
+                        90% {
+                            opacity: 1;
+                        }
+                        100% {
+                            opacity: 0;
+                        }
+                    }
+                
+                </style>
+            </head>
+            <body>
+            
+                <canvas id="c"></canvas>
+                <span id = "author">Welcome HACKER</span>
+                
+                <script>
+                // geting canvas by id c
+                var c = document.getElementById("c");
+                var ctx = c.getContext("2d");
         
-        </style>
-    </head>
-    <body>
+                //making the canvas full screen
+                c.height = window.innerHeight;
+                c.width = window.innerWidth;
+        
+                //chinese characters - taken from the unicode charset
+                var matrix = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%";
+                //converting the string into an array of single characters
+                matrix = matrix.split("");
+        
+                var font_size = 12;
+                var columns = c.width / font_size; //number of columns for the rain
+                //an array of drops - one per column
+                var drops = [];
+                //x below is the x coordinate
+                //1 = y co-ordinate of the drop(same for every drop initially)
+                for(var x = 0; x < columns; x++)
+                    drops[x] = 1; 
+        
+                //drawing the characters
+                function draw()
+                {
+                    //Black BG for the canvas
+                    //translucent BG to show trail
+                    ctx.fillStyle = "rgba(0, 0, 0, 0.002)";
+                    ctx.fillRect(0, 0, c.width, c.height);
+        
+                    ctx.fillStyle = "#a815d1"; //colour for matrix code
+                    ctx.font = font_size + "px arial";
+                    //looping over drops
+                    for( var i = 0; i < drops.length; i++ )
+                    {
+                        //a random chinese character to print
+                        var text = matrix[ Math.floor( Math.random() * matrix.length ) ];
+                        //x = i*font_size, y = value of drops[i]*font_size
+                        ctx.fillText(text, i * font_size, drops[i] * font_size);
+        
+                        //sending the drop back to the top randomly after it has crossed the screen
+                        //adding a randomness to the reset to make the drops scattered on the Y axis
+                        if( drops[i] * font_size > c.height && Math.random() > 0.975 )
+                            drops[i] = 0;
+        
+                        //incrementing Y coordinate
+                        drops[i]++;
+                    }
+                }
+        
+                setInterval( draw, 35 );
     
-        <canvas id="c"></canvas>
-        <span id = "author">Welcome HACKER</span>
-        
-        <script>
-        // geting canvas by id c
-        var c = document.getElementById("c");
-        var ctx = c.getContext("2d");
-
-        //making the canvas full screen
-        c.height = window.innerHeight;
-        c.width = window.innerWidth;
-
-        //chinese characters - taken from the unicode charset
-        var matrix = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%";
-        //converting the string into an array of single characters
-        matrix = matrix.split("");
-
-        var font_size = 10;
-        var columns = c.width / font_size; //number of columns for the rain
-        //an array of drops - one per column
-        var drops = [];
-        //x below is the x coordinate
-        //1 = y co-ordinate of the drop(same for every drop initially)
-        for(var x = 0; x < columns; x++)
-            drops[x] = 1; 
-
-        //drawing the characters
-        function draw()
-        {
-            //Black BG for the canvas
-            //translucent BG to show trail
-            ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
-            ctx.fillRect(0, 0, c.width, c.height);
-
-            ctx.fillStyle = "#a815d1"; //green text
-            ctx.font = font_size + "px arial";
-            //looping over drops
-            for( var i = 0; i < drops.length; i++ )
-            {
-                //a random chinese character to print
-                var text = matrix[ Math.floor( Math.random() * matrix.length ) ];
-                //x = i*font_size, y = value of drops[i]*font_size
-                ctx.fillText(text, i * font_size, drops[i] * font_size);
-
-                //sending the drop back to the top randomly after it has crossed the screen
-                //adding a randomness to the reset to make the drops scattered on the Y axis
-                if( drops[i] * font_size > c.height && Math.random() > 0.975 )
-                    drops[i] = 0;
-
-                //incrementing Y coordinate
-                drops[i]++;
-            }
-        }
-
-        setInterval( draw, 35 );
-
-        </script>
-</div>
-
-
-
-</body>
-</html>
+                </script>
+           
+    </body>
+        </html>

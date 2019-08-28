@@ -1,6 +1,59 @@
-* {
+.heading {
+    color: greenyellow;
+    font-size: 25px;
+    font-family: monospace;
+    text-align: center;
+}
+
+.headinghome {
     color: #a815d1;
-    font-size: 15px;
+    font-size: 40px;
+    font-family: monospace;
+    text-align: center;
+}
+
+.main {
+    color: greenyellow;
+    font-size: 20px;
     font-family: monospace
 }
 
+
+.mainhome {
+    color: #a815d1;
+    font-size: 20px;
+    font-family: monospace;
+    text-align: center;
+}
+
+.links {
+    color: #a815d1;
+    font-size: 20px;
+    font-family: monospace;
+    text-align: center;
+   }
+
+.container {
+    display: flex;
+    min-height: 100vh;
+    flex-wrap: wrap;
+}
+
+.unicorn {
+    background-image: url("unicorn1.gif");
+    background-size: cover;
+
+}
+
+.unicorn2 {
+    background-image: url("unicorn1.jpg");
+    background-size: cover;
+}
+.unicorn3 {
+        background-image: url("unicorn5.jpeg");
+        background-size: cover;
+
+
+
+
+        /*developcoding.moodlecloud.com*/
