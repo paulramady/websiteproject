@@ -5,9 +5,8 @@
     <link rel="stylesheet" type="text/css" href= "main.css">
     <title>index</title>
 </head>
-<body class="unicorn"> 
+<body class="unicornindex">
         <head>
-                
                 <style>
                     /*basic reset */
                     *{
@@ -37,10 +36,11 @@
                     
                     #author {
                         position: absolute;
+                        font-size: 35px;
                         bottom: 450px;
-                        left: 500px;
-                        color : #0F0;
-                        z-index : 1;
+                        left: 350px;
+                        color : greenyellow;
+                        z-index : 2;
                         box-sizing: border-box;
                         vertical-align: middle;
                     }
@@ -50,7 +50,7 @@
                         font-size: 1.5em;
                     }
                     span:after {
-                        content:"_The Unicorn Matrix has you";
+                        content:"_The Uni-Matrix has you";
                         opacity: 0;
                         animation: cursor 1s infinite;
                     }
@@ -74,10 +74,12 @@
                 
                 </style>
             </head>
-            <body>
-            
+            <body>         
                 <canvas id="c"></canvas>
-                <span id = "author">Welcome HACKER</span>
+                <span id = "author">
+                    <a href="home.html">Welcome NEO</a>
+    
+                </span>
                 
                 <script>
                 // geting canvas by id c
@@ -89,11 +91,11 @@
                 c.width = window.innerWidth;
         
                 //chinese characters - taken from the unicode charset
-                var matrix = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%";
+                var matrix = "DADDYLOVESPOPPY123456789@#$%^&*()*&^%";
                 //converting the string into an array of single characters
                 matrix = matrix.split("");
         
-                var font_size = 12;
+                var font_size = 10;
                 var columns = c.width / font_size; //number of columns for the rain
                 //an array of drops - one per column
                 var drops = [];
@@ -107,7 +109,7 @@
                 {
                     //Black BG for the canvas
                     //translucent BG to show trail
-                    ctx.fillStyle = "rgba(0, 0, 0, 0.002)";
+                    ctx.fillStyle = "rgba(0, 0, 0, 0.001)";
                     ctx.fillRect(0, 0, c.width, c.height);
         
                     ctx.fillStyle = "#a815d1"; //colour for matrix code
@@ -132,7 +134,9 @@
         
                 setInterval( draw, 35 );
     
-                </script>
-           
+                </script>      
+
+                
     </body>
+
         </html>
