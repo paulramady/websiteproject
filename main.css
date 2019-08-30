@@ -74,12 +74,13 @@
 
 .unicorn31 {
     background-image: url("unicorn333.jpg");
-    color: #a815d1;
+    color: orange;
     font-size: 18px;
     font-family: monospace;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-color: rgba(0, 0, 0,0.6)
 }
 
 .unicornabme {
